@@ -1,0 +1,27 @@
+CREATE DATABASE Bookinfo;
+
+USE Bookinfo;
+
+CREATE TABLE Book(
+BookId int NOT NULL,
+Title varchar(20),
+AuthorId int,
+PublisherId int,
+PublishedDate date,
+PRIMARY KEY(BookId),
+FOREIGN KEY(AuthorId)REFERENCES Author (AuthorId),
+FOREIGN KEY(PublisherId)REFERENCES Publisher(PublisherId)
+);
+
+CREATE TABLE Author(
+AuthorId int NOT NULL,
+AuthorName varchar(20),
+PRIMARY KEY(AuthorId)
+);
+
+
+CREATE TABLE Publisher(
+PublisherId int,
+PublisherName varchar(20),
+PRIMARY KEY(PUblisherId)
+);
